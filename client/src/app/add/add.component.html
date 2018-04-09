@@ -1,0 +1,28 @@
+<h3> New Product </h3>
+
+<div class = errors>
+<p *ngIf="errors.name">{{errors.name.message}}</p>
+<p *ngIf="errors.qty">{{errors.qty.message}}</p>
+<p *ngIf="errors.price">{{errors.price.message}}</p>
+</div>
+
+<form (submit) = "addProduct($event)" #form ="ngForm">
+
+	<label>Name</label>
+	<input type="text" name="newProduct.name" [(ngModel)]="newProduct.name" #name="ngModel" required minlength="3" />
+	<small class = "errors" [hidden]="name.valid || (name.untouched && !form.submitted)">Name is required (Minimum length of 3 characters)</small>
+
+    <label>Qty</label>
+    <input type="number" name="newProduct.qty" [(ngModel)]="newProduct.qty" required min ="1" 
+    #qty="ngModel"
+    />
+    <small class = "errors" [hidden]="qty.valid || (qty.untouched && !form.submitted)">Product quantity is required (Minimum value: 1)</small>
+
+
+    <label>Price</label> 
+    <input type="number" name="newProduct.price" [(ngModel)]="newProduct.price" required min ="1" #price="ngModel" />
+    <small class = "errors" [hidden]="price.valid || (price.untouched && !form.submitted)">Product price is required (Minimum value: 1)</small>
+
+    <button [disabled]="form.invalid"  type="submit">Create</button>
+    <button [routerLink] = "['/products']">Cancel</button>
+</form>
