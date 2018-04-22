@@ -1,3 +1,20 @@
 .errors{
 	color:purple;
 }
+
+.wrapper{
+	border:solid black thin;
+	width:50%;
+}
+
+p{
+	margin: 30px;
+}
+
+#update{
+	background-color:lightgreen;
+}
+
+input, button{
+	margin-left: 20px;
+}

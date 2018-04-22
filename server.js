@@ -97,7 +97,7 @@ app.post('/updateproduct/:id', (req,res)=>{
 
 app.delete('/deleteproduct/:id', (req,res)=>{
     console.log("here")
-    Item.remove({_id:req.params.id}, function(err){
+    Item.remove({_id:req.params.id, qty:1}, function(err){
       if(err){
         res.status(400).json(err)
       }

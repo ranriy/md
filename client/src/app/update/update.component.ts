@@ -25,8 +25,7 @@ export class UpdateComponent implements OnInit {
   	this._route.params.subscribe((params: Params)=>{
   		this.productId = params['id']
   		let observable = this._httpService.getProduct(params['id'])
-  		observable.subscribe((res)=>{
-  			console.log(res)
+  		observable.subscribe((res:any)=>{
   			this.newProduct.name = res.name;
   			this.newProduct.qty= res.qty;
   			this.newProduct.price = res.price;

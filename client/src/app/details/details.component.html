@@ -1,7 +1,11 @@
-<h3>Product Details</h3>
-Name: {{name}}
-Qty: {{qty}}
-Price: {{price}}
 
-<button (click) = "onDelete()">Delete</button>
-<button [routerLink] = "['/products']">Cancel</button>
+<div class="wrapper">
+	<p id="error" *ngIf="qty>1">To delete a product, the quantity must be 1</p>
+<h3>Product Details</h3>
+<p>Name: {{name}}</p>
+<p>Qty: {{qty}}</p>
+<p>Price: {{price}}</p>
+
+<p><button id ="delete" (click) = "onDelete()" [disabled]="qty>1">Delete</button>
+<button [routerLink] = "['/products']">Cancel</button></p>
+</div>

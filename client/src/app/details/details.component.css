@@ -1,0 +1,21 @@
+.wrapper{
+	border:solid black thin;
+	width:50%;
+}
+
+#error{
+	color:purple;
+}
+
+p{
+	margin: 30px;
+}
+
+#delete{
+	background-color:red;
+	color:white;
+}
+
+input, button{
+	margin-left: 20px;
+}
